@@ -2,9 +2,7 @@
 // resulted task, Unit 5
 // august 2023
 
-
-using System;
-using System.Text.RegularExpressions;
+using System;           // Есть ли смысл записывать?
 
 
 namespace Unit5_result
@@ -14,11 +12,11 @@ namespace Unit5_result
         static (string Name, string Surname, int Age, string Pet, string[] PetList, string[] FlowersList) UserDataList;
         
         
-        public static string GetStringDataFromConsole()
+        public static string GetStringDataFromConsole()             // Получение данных из консоли
         {
             string dataString = Console.ReadLine();
 
-            if (string.IsNullOrEmpty(dataString))                   // ! IsNullOrEmpty() - есть ли аналоги?
+            if (string.IsNullOrEmpty(dataString))                   // ! IsNullOrEmpty() - есть ли аналоги? 
             {
                 Console.WriteLine("The data is not correct. You have to enter the characters.");
                 Console.Write("Please, repeat entering the string: ");
@@ -31,7 +29,7 @@ namespace Unit5_result
         }
 
 
-        public static string GetTextDataFromConsole()
+        public static string GetTextDataFromConsole()               // Проверка получения только текста в строке
         {
             string textString = GetStringDataFromConsole();
             bool containsNumber = textString.Any(char.IsDigit);
@@ -49,7 +47,7 @@ namespace Unit5_result
         }
         
         
-        public static int GetNumberDataFromConsole()
+        public static int GetNumberDataFromConsole()            // Получение цифрового значения, типа int + проверка на отрицательные значения
         {
             int dataNumber = int.Parse(GetStringDataFromConsole());
 
@@ -66,7 +64,7 @@ namespace Unit5_result
         }
         
         
-        public static int CheckZeroNumberDataFromConsole(int dataNumber)
+        public static int CheckZeroNumberDataFromConsole(int dataNumber)            // Проверка 0
         {
             if (dataNumber == 0)
             {
@@ -147,8 +145,6 @@ namespace Unit5_result
                 Console.WriteLine($"\t\t{UserDataList.FlowersList[i]}");
             }
         }
-        
-        
         
         
         private static void Main(string[] args)
